@@ -1,4 +1,4 @@
 // Added the API Key
 export default {
-    apikey: "8451ca97"
+    apikey: "a6805552"
 }
