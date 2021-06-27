@@ -4,10 +4,10 @@
     
 <!--tt0409591 (OMDb API Key) give us a movie trailer from omdb-->
       <router-link to="/movie/tt0409591">
-        <img src="https://m.media-amazon.com/images/M/MV5BZmQ5NGFiNWEtMmMyMC00MDdiLTg4YjktOGY5Yzc2MDUxMTE1XkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_SX300.jpg" alt="Naruto Poster" class="featured-img" />
+        <img src="../assets/home.png" alt="Movie Searcher" class="featured-img" />
         <div class="detail">
-          <h3>Naruto</h3>
-          <p>Naruto Uzumaki, a mischievous adolescent ninja, struggles as he searches for recognition and dreams of becoming the Hokage, the village's leader and strongest ninja.</p>
+          <h3>Movie Search Engine</h3>
+          <p>Enter Your TV / Game / TV Series</p>
         </div>
       </router-link>
     </div>
@@ -88,7 +88,7 @@ export default {
       display: block;
       width: 100%;
       object-fit: cover;
-
+      height: 700px;
       position: relative;
       z-index: 0;
     }
@@ -101,6 +101,9 @@ export default {
       background-color: rgba(0, 0, 0, 0.6);
       padding: 16px;
       z-index: 1;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
 
       h3 {
         color:#FFF;
