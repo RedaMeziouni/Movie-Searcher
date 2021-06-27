@@ -17,14 +17,64 @@
       <input type="text" placeholder="What are you looking for?" v-model="search" />
       <input type="submit" value="Search" />
     </form>
+
+    <div class="movies-list">
+      <div class="movie" v-for="movie in movies" :key="movie.imdbID">
+      <!--The Exact Same Logic Above but in this time we let the user Add a Name (Using Search Bar) so we can get the ID-->
+        <router-link :to="'/movie/' + movie.imdbID" class="movie-link">
+        <!--Get the Image Also from the API-->
+          <div class="product-image">
+            <img :src="movie.Poster" alt="Movie Poster" />
+            <!--Get the Type of ur search (Game or TV Series)-->
+            <div class="type">{{ movie.Type }}</div>
+          </div>
+
+          <!--Movie / TV Serie Preview-->
+          <div class="detail">
+            <p class="year">{{ movie.Year }}</p>
+            <h3>{{ movie.Title }}</h3>
+          </div>
+        </router-link>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-
+// Composition API
+// ref allows u to reference to an file (in our case is search) 
+import { ref } from 'vue';
+// import environement.js file to get the API key
+import env from '@/env.js'
 
 export default {
+  setup () {
+    const search = ref("");
+    const movies = ref([]);
 
+    // Search Method (using Arrow Func)
+    const SearchMovies = () => {
+      if (search.value != "") {
+        //console.log(search.value);
+        // run the API Key and fetch Data
+        fetch(`http://www.omdbapi.com/?apikey=${env.apikey}&s=${search.value}`)
+          .then(response => response.json())
+          .then(data => {
+            // console.log(data);
+            movies.value = data.Search; //Here where the Aray of movies are stored
+            search.value = "";
+            // console.log(data); IT WORKS !!!
+          });
+      }
+    }
+
+    return {
+      search,
+      movies,
+      SearchMovies
+    }
+  }
+ 
 }
 </script>
 
