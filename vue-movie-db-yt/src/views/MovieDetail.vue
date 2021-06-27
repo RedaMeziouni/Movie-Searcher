@@ -1,7 +1,10 @@
 <template>
-    <div class="movie-detail">
-        <h2> Movie Title</h2>
-    </div>
+  <div class="movie-detail">
+    <h2>{{movie.Title}}</h2>
+    <p>{{ movie.Year }}</p>
+    <img :src="movie.Poster" alt="Movie Poster" class="featured-img" />
+    <p>{{ movie.Plot }}</p>
+  </div>
 </template>
 
 <!--Script Block-->
