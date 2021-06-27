@@ -1,4 +1,4 @@
-# vue-movie-db-yt
+# Simple Movie / Tv Series Search Engine using VueJS & OMDb
 
 ## Project setup
 ```
