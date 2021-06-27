@@ -1,4 +1,4 @@
-# Simple Movie / Tv Series Search Engine using VueJS & OMDb
+# Simple Movie / Tv Series Search Engine using VueJS & OMDb API
 
 ## Project setup
 ```
