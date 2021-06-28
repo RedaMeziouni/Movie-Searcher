@@ -63,7 +63,7 @@ export default {
             // console.log(data);
             movies.value = data.Search; //Here where the Aray of movies are stored
             search.value = "";
-            // console.log(data); IT WORKS !!!
+            // console.log(data); //IT WORKS !!!
           });
       }
     }
